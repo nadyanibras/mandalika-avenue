@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandalika Avenue - Semi Mall Terbuka di Pesisir Mandalika</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            DEFAULT: '#7F6244',
+                            light: '#937556',
+                            dark: '#6A5138',
+                        },
+                        white: {
+                            DEFAULT: '#FFFFFF',
+                            off: '#F9F9F9',
+                            dark: '#F0F0F0',
+                        },
+                        navy: {
+                            DEFAULT: '#112141',
+                            light: '#1a325a',
+                            dark: '#0a1428',
+                        },
+                        gold: {
+                            DEFAULT: '#d7bf91',
+                            light: '#e5d4b3',
+                            dark: '#c9aa70',
+                        },
+                        neutral: {
+                            light: '#f8f8f8',
+                            DEFAULT: '#e0e0e0',
+                            dark: '#333333',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            background-color: #f8f8f8;
+        }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(127, 98, 68, 0.8), rgba(127, 98, 68, 0.8)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Crect width='1200' height='600' fill='%237F6244'/%3E%3Cpath d='M0,400 Q300,350 600,450 T1200,400 L1200,600 L0,600 Z' fill='%23d7bf91' opacity='0.3'/%3E%3Cpath d='M0,450 Q300,400 600,500 T1200,450 L1200,600 L0,600 Z' fill='%23d7bf91' opacity='0.5'/%3E%3Cpath d='M0,500 Q300,450 600,550 T1200,500 L1200,600 L0,600 Z' fill='%23d7bf91' opacity='0.7'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .store-card {
+            transition: all 0.3s ease;
+        }
+
+        .store-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(17, 33, 65, 0.2), 0 10px 10px -5px rgba(17, 33, 65, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d7bf91;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .product-image {
+            transition: all 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .social-icon {
+            transition: all 0.2s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #d7bf91;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-neutral-dark">
+    <!-- Navbar -->
+    <nav class="bg-[#7F6244]/95 backdrop-blur-sm fixed w-full z-10 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <span class="text-2xl font-serif font-bold text-white">MANDALIKA<span
+                        class="text-white">AVENUE</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html"
+                    class="nav-link text-white hover:text-brown font-medium uppercase text-sm tracking-wider">Home</a>
+                <a href="about.html"
+                    class="nav-link text-white hover:text-brown font-medium uppercase text-sm tracking-wider">About
+                    us</a>
+                <a href="store.html"
+                    class="nav-link text-white hover:text-brown font-medium uppercase text-sm tracking-wider">Store</a>
+                <a href="contact-us.html"
+                    class="nav-link text-white hover:text-brown font-medium uppercase text-sm tracking-wider">Contact</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="hidden fixed inset-0 bg-white z-20 p-5 flex flex-col items-center justify-center space-y-8">
+        <a href="index.html"
+            class="text-xl text-navy hover:text-white font-medium uppercase text-sm tracking-wider">Beranda</a>
+        <a href="about.html"
+            class="text-xl text-navy hover:text-white font-medium uppercase text-sm tracking-wider">Tentang</a>
+        <a href="#stores"
+            class="text-xl text-navy hover:text-white font-medium uppercase text-sm tracking-wider">Toko</a>
+        <a href="contact-us.html"
+            class="text-xl text-navy hover:text-white font-medium uppercase text-sm tracking-wider">Kontak</a>
+        <button class="absolute top-5 right-5 text-navy">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <section id="contact-us-page" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-neutral-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-brown mb-4">Hubungi Kami</h1>
+                <p class="text-lg text-neutral-dark max-w-2xl mx-auto">
+                    Kami senang mendengar dari Anda! Baik Anda memiliki pertanyaan, masukan, atau ingin berdiskusi lebih
+                    lanjut, jangan ragu untuk menghubungi kami melalui detail di bawah ini atau isi formulir kontak.
+                </p>
+                <div class="w-24 h-1 bg-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-serif font-bold text-brown mb-4">Informasi Kontak</h2>
+                        <ul class="space-y-4 text-neutral-dark">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-gold mr-4 mt-1 flex-shrink-0"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+                                <span>Jl. Pantai Mandalika, Kuta, Pujut, Kabupaten Lombok Tengah, Nusa Tenggara Bar.
+                                    83573, Indonesia</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-gold mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                </svg>
+                                <span>+62 123 4567 890 (Placeholder)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-gold mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                </svg>
+                                <span>info@mandalikaavenue.com (Placeholder)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-serif font-bold text-brown mb-4">Jam Operasional</h2>
+                        <ul class="space-y-2 text-neutral-dark">
+                            <li>Senin - Jumat: 10:00 - 22:00 WITA</li>
+                            <li>Sabtu: 09:00 - 23:00 WITA</li>
+                            <li>Minggu: 09:00 - 22:00 WITA</li>
+                            <li>Hari Libur Nasional: 10:00 - 21:00 WITA</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-serif font-bold text-brown mb-4">Temukan Kami</h2>
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126235.90319328097!2d116.20128332953805!3d-8.896061136295243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb1c12ee91277%3A0x310680750e251c61!2sThe%20Mandalika!5e0!3m2!1sen!2sid!4v1717433853941!5m2!1sen!2sid"
+                                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-10 rounded-lg shadow-xl">
+                    <h2 class="text-3xl font-serif font-bold text-brown mb-6">Kirim Pesan</h2>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-dark mb-1">Nama
+                                Lengkap</label>
+                            <input type="text" name="name" id="name" autocomplete="name" required
+                                class="mt-1 block w-full px-4 py-3 border border-neutral rounded-md shadow-sm focus:ring-gold focus:border-gold sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neutral-dark mb-1">Alamat
+                                Email</label>
+                            <input type="email" name="email" id="email" autocomplete="email" required
+                                class="mt-1 block w-full px-4 py-3 border border-neutral rounded-md shadow-sm focus:ring-gold focus:border-gold sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-neutral-dark mb-1">Subjek</label>
+                            <input type="text" name="subject" id="subject" required
+                                class="mt-1 block w-full px-4 py-3 border border-neutral rounded-md shadow-sm focus:ring-gold focus:border-gold sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-dark mb-1">Pesan
+                                Anda</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="mt-1 block w-full px-4 py-3 border border-neutral rounded-md shadow-sm focus:ring-gold focus:border-gold sm:text-sm"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brown hover:bg-brown-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brown-light transition-colors">
+                                Kirim Pesan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#7F6244] text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Mandalika Avenue</h3>
+                    <p class="text-white mb-4">Where modern lifestyle meets coastal charm in the heart of Mandalika.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-[#5a4b38] transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-[#5a4b38] transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-[#5a4b38] transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-[#5a4b38] transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white hover:text-[#5a4b38] transition">Home</a></li>
+                        <li><a href="about.html" class="text-white hover:text-[#5a4b38] transition">About Us</a>
+                        </li>
+                        <li><a href="#stores" class="text-white hover:text-[#5a4b38] transition">Stores</a></li>
+                        <li><a href="#" class="text-white hover:text-[#5a4b38] transition">Events</a></li>
+                        <li><a href="#" class="text-white hover:text-[#5a4b38] transition">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Opening Hours</h3>
+                    <ul class="space-y-2 text-white">
+                        <li>Monday - Friday: 10:00 - 22:00</li>
+                        <li>Saturday: 09:00 - 23:00</li>
+                        <li>Sunday: 09:00 - 22:00</li>
+                        <li>Public Holidays: 10:00 - 21:00</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-white">
+                        <li><i class="fas fa-map-marker-alt mr-2 text-[#5a4b38]"></i> Jl. Pantai Mandalika, Lombok,
+                            Indonesia</li>
+                        <li><i class="fas fa-phone mr-2 text-[#5a4b38]"></i> +62 123 4567 890</li>
+                        <li><i class="fas fa-envelope mr-2 text-[#5a4b38]"></i> info@mandalikaavenue.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white pt-8">
+                <p class="text-center text-white">&copy; 2023 Mandalika Avenue. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Store modal functionality
+        const storeButtons = document.querySelectorAll('.view-store-btn');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        storeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const storeId = button.getAttribute('data-store');
+                const modal = document.getElementById(`${storeId}-modal`);
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
